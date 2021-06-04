@@ -1,0 +1,74 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+* {
+	margin: 0;
+	padding: 0;
+	color: $fontColor;
+}
+
+body {
+	background-color: $background;
+}
+
+#main-nav {
+	height: 200px;
+	display: flex;
+	border-bottom: 1px solid $divider;
+	padding: 0;
+	justify-content: space-between;
+	.nav-box:first-child {
+		border-left: 1px solid $divider;
+	}
+	.nav-box:last-child {
+		border-right: 1px solid $divider;
+	}
+}
+
+.nav-box {
+	background-color: $background;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+
+.nav-box-center {
+	flex-grow: 1;
+	width: 100%;
+}
+
+.icon-wrapper {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	border: 1px solid $primary;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: $defaultTransition;
+	&:hover {
+		cursor: pointer;
+		background-color: $backgroundHover;
+	}
+	.fa {
+		color: $primary;
+		font-size: 2rem;
+	}
+}
+
+#top-menu {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	li {
+		min-width: 30%;
+		text-align: center;
+		font-size: 2rem;
+		a {
+			color: $fontColor;
+			&:hover {
+				color: $fontColorHover;
+			}
+		}
+	}
+}

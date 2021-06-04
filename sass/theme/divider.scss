@@ -1,0 +1,35 @@
+%divider {
+	&:after,
+	&:before {
+		display: block;
+		position: absolute;
+	}
+	&:after {
+		text-transform: none;
+		text-shadow: none;
+		@include rem(font-size, 12px);
+		text-align: center;
+		color: #ebf7ff;
+		left: 46%;
+		bottom: -43px;
+		height: 16px;
+		width: 16px;
+		background: #062f4c;
+		margin: 0 auto;
+		padding: 6px;
+		border-radius: 100%;
+	}
+	&:before {
+		width: 100%;
+		content: "";
+		border-bottom: 2px solid #062f4c;
+		bottom: -30px;
+	}
+}
+
+@mixin divider($text: "or") {
+	@extend %divider;
+	&:after {
+		content: $text;
+	}
+}
