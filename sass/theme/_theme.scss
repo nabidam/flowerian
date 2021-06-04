@@ -9,32 +9,23 @@ body {
 	background-color: $background;
 }
 
-#main-nav {
+.main-nav {
 	height: 200px;
-	display: flex;
 	border-bottom: 1px solid $divider;
 	padding: 0;
 	justify-content: space-between;
-	.nav-box:first-child {
+
+	& > div:first-child {
 		border-left: 1px solid $divider;
 	}
-	.nav-box:last-child {
+	& > div:last-child {
 		border-right: 1px solid $divider;
 	}
-}
-
-.nav-box {
-	background-color: $background;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 20%;
-}
-
-.nav-box-center {
-	flex-grow: 1;
-	width: 100%;
+	& > div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .icon-wrapper {
@@ -59,6 +50,7 @@ body {
 #top-menu {
 	display: flex;
 	justify-content: center;
+	flex-direction: row;
 	width: 100%;
 	li {
 		min-width: 30%;
@@ -70,5 +62,32 @@ body {
 				color: $fontColorHover;
 			}
 		}
+	}
+}
+
+.wrapper,
+.sidebar {
+	padding: 0;
+}
+
+.content {
+	text-align: right;
+	border-bottom: 1px solid $divider;
+	& > div:first-child {
+		border-left: 1px solid $divider;
+	}
+	& > div:last-child {
+		border-right: 1px solid $divider;
+	}
+}
+
+.content-area {
+	padding: 30px 60px;
+}
+
+.widget-area {
+	padding: 15px 30px;
+	ul {
+		list-style: none;
 	}
 }

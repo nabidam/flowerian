@@ -32,37 +32,40 @@ $container = get_theme_mod('understrap_container_type');
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
 
-			<nav id="main-nav" class="navbar navbar-expand-md bg-white" aria-labelledby="main-nav-label">
+			<div class="container-fluid">
 
-				<div class="nav-box menubox">
-					<div class="icon-wrapper">
-						<i class="fa fa-bars"></i>
+				<div class="row main-nav" aria-labelledby="main-nav-label">
+
+					<div class="col-md-2">
+						<div class="icon-wrapper">
+							<i class="fa fa-bars"></i>
+						</div>
 					</div>
-				</div>
 
-				<div class="nav-box nav-box-center navs">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav ml-auto',
-							'fallback_cb'     => '',
-							'menu_id'         => 'top-menu',
-							'depth'           => 2,
-							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-						)
-					);
-					?>
-				</div>
-
-				<div class="nav-box searchbox">
-					<div class="icon-wrapper">
-						<i class="fa fa-search"></i>
+					<div class="navs col-md-8">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								'container_class' => 'navbar-collapse',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => 'navbar-nav ml-auto',
+								'fallback_cb'     => '',
+								'menu_id'         => 'top-menu',
+								'depth'           => 2,
+								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+							)
+						);
+						?>
 					</div>
-				</div>
 
-			</nav><!-- .site-navigation -->
+					<div class="col-md-2">
+						<div class="icon-wrapper">
+							<i class="fa fa-search"></i>
+						</div>
+					</div>
+
+				</div><!-- .site-navigation -->
+			</div>
 
 		</div><!-- #wrapper-navbar end -->
